@@ -4,12 +4,13 @@ import Chat from './components/Chat/Chat'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [chatVisibility, setChatVisibility] = useState(false)
 
   return (
     <>
-      <Join/>
-      <Chat/>
+    {
+      chatVisibility ? <Chat/> : <Join setChatVisibility ={setChatVisibility}/>
+    }
     </>
   )
 }
